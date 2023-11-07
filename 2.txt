@@ -1,0 +1,9 @@
+SELECT ?regionLabel ?population
+WHERE {
+  ?region wdt:P31 wd:Q3348196;
+          wdt:P1082 ?population .
+  
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk". }
+}
+ORDER BY DESC(?population)
+LIMIT 1
